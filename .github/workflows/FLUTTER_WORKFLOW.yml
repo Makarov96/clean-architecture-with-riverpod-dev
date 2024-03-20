@@ -7,4 +7,5 @@ jobs:
   flutter_master_deploy:
     runs-on: macos-latest
     steps:
-      - run: echo 'hello world'
+      - name: COPY .
+        uses: actions/checkout@v4
