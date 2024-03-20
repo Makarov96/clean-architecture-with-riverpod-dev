@@ -9,3 +9,8 @@ jobs:
     steps:
       - name: COPY .
         uses: actions/checkout@v4
+      - name: INSTALL JAVA 11
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin" # See 'Supported distributions' for available options
+          java-version: "11"
