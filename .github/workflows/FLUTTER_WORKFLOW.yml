@@ -14,9 +14,9 @@ jobs:
         with:
           path: |
             /Users/runner/hostedtoolcache/flutter
-            # **/node_modules
+            **/node_modules
 
-          key: "${{ runner.tool_cache }}/flutter/stable-3.19.0-x64"
+          key: "${{ runner.tool_cache }}-flutter-${{runner.arch}}"
 
       #<---------------- END CACHE STRATEGY ------------------->
       #<-------------------INIT CONFIG---------------------->
