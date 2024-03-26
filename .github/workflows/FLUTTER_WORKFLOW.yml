@@ -28,12 +28,6 @@ jobs:
           flutter-version: "3.19.0"
           channel: "stable"
 
-      - name: FLUTTER ANALYZE
-        run: flutter analyze
-
-      - name: FLUTTER ANALYZE
-        run: flutter test
-
       #<---------------- END FLUTTER CONFIG -------------------->
       #<----------------  CACHE STRATEGY ----------------------->
       - name: CACHE STRATEGY
@@ -44,9 +38,17 @@ jobs:
             **/node_modules
             **/hostedtoolcache
 
-          key: ${{ runner.os }}-primes
+          key: ${{ runner.os }}-flutter-install-cache-${{runner.tool_cache}}
 
       #<---------------- END CACHE STRATEGY ------------------->
+      #<----------------------  GUARDS ------------------------>
+      - name: FLUTTER ANALYZE
+        run: flutter analyze
+
+      - name: FLUTTER ANALYZE
+        run: flutter test
+      #<-------------------- END  GUARDS ---------------------->
+
       #<---------------- FLUTTER RELEASES --------------------->
 
       - name: GENERATE APK
