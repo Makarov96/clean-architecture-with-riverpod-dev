@@ -26,7 +26,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            **/Users/runner/hostedtoolcache/flutter
+            /Users/runner/hostedtoolcache/flutter
             # **/node_modules
 
           key: ${{ runner.os }}-flutter-23049823904djfsdlfsljfsdj29384723984723498237423
