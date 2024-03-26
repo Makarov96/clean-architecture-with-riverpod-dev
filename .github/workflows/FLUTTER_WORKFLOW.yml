@@ -36,9 +36,9 @@ jobs:
         with:
           path: |
             **/node_modules
-            **/hostedtoolcache
+            **/hostedtoolcache/flutter
 
-          key: ${{ runner.os }}-flutter-install-cache-${{runner.tool_cache}}
+          key: ${{ runner.os }}-flutter-install-cache
 
       #<---------------- END CACHE STRATEGY ------------------->
       #<----------------------  GUARDS ------------------------>
