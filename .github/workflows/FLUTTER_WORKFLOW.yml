@@ -41,18 +41,18 @@ jobs:
           channel: "stable"
           cache: true
 
-      #<---------------- END FLUTTER CONFIG -------------------->
+      # <---------------- END FLUTTER CONFIG -------------------->
 
-      # #<----------------------  GUARDS ------------------------>
-      # - name: FLUTTER ANALYZE
-      #   run: flutter analyze
+      #<----------------------  GUARDS ------------------------>
+      - name: FLUTTER ANALYZE
+        run: flutter analyze
 
-      # - name: FLUTTER ANALYZE
-      #   run: flutter test
-      # #<-------------------- END  GUARDS ---------------------->
+      - name: FLUTTER ANALYZE
+        run: flutter test
+      #<-------------------- END  GUARDS ---------------------->
 
-      # #<---------------- FLUTTER RELEASES --------------------->
+      #<---------------- FLUTTER RELEASES --------------------->
 
-      # - name: GENERATE APK
-      #   run: flutter build apk
-      # #<---------------- END FLUTTER RELEASES ----------------->
+      - name: GENERATE APK
+        run: flutter build apk
+      #<---------------- END FLUTTER RELEASES ----------------->
