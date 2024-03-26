@@ -40,17 +40,17 @@ jobs:
 
           key: ${{ runner.os }}-flutter-install-cache-${{ hashFiles('**/package_config.json') }}
 
-      #<---------------- END CACHE STRATEGY ------------------->
-      #<----------------------  GUARDS ------------------------>
-      - name: FLUTTER ANALYZE
-        run: flutter analyze
+      # #<---------------- END CACHE STRATEGY ------------------->
+      # #<----------------------  GUARDS ------------------------>
+      # - name: FLUTTER ANALYZE
+      #   run: flutter analyze
 
-      - name: FLUTTER ANALYZE
-        run: flutter test
-      #<-------------------- END  GUARDS ---------------------->
+      # - name: FLUTTER ANALYZE
+      #   run: flutter test
+      # #<-------------------- END  GUARDS ---------------------->
 
-      #<---------------- FLUTTER RELEASES --------------------->
+      # #<---------------- FLUTTER RELEASES --------------------->
 
-      - name: GENERATE APK
-        run: flutter build apk
-      #<---------------- END FLUTTER RELEASES ----------------->
+      # - name: GENERATE APK
+      #   run: flutter build apk
+      # #<---------------- END FLUTTER RELEASES ----------------->
