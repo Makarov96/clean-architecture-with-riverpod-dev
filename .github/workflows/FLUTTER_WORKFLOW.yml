@@ -20,15 +20,6 @@ jobs:
       - name: FIREBASE CONF
         run: npm install -g firebase-tools
       #<----------------  END INIT CONFIG---------------------->
-
-      #<----------------  FLUTTER CONFIG ---------------------->
-      - name: FLUTTER INSTALL
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: "3.19.0"
-          channel: "stable"
-
-      #<---------------- END FLUTTER CONFIG -------------------->
       #<----------------  CACHE STRATEGY ----------------------->
       - name: CACHE STRATEGY
         id: cache-primes
@@ -41,6 +32,14 @@ jobs:
           key: ${{ runner.os }}-flutter-install-cache
 
       #<---------------- END CACHE STRATEGY ------------------->
+      #<----------------  FLUTTER CONFIG ---------------------->
+      - name: FLUTTER INSTALL
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.19.0"
+          channel: "stable"
+
+      #<---------------- END FLUTTER CONFIG -------------------->
       #<----------------------  GUARDS ------------------------>
       - name: FLUTTER ANALYZE
         run: flutter analyze
