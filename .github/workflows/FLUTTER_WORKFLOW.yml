@@ -38,7 +38,7 @@ jobs:
             **/Users/runner/hostedtoolcache/flutter
             # **/node_modules
 
-          key: ${{ runner.os }}-flutter-install-cache-${{ hashFiles('**/package_config.json') }}
+          key: ${{ runner.os }}-flutter
 
       # #<---------------- END CACHE STRATEGY ------------------->
       # #<----------------------  GUARDS ------------------------>
