@@ -80,16 +80,16 @@ jobs:
       - name: FLUTTER ANALYZE
         run: flutter analyze
 
-      - name: FLUTTER ANALYZE
+      - name: FLUTTER TEST
         run: flutter test
       #<-------------------- END  GUARDS ---------------------->
 
       #<---------------- FLUTTER RELEASES --------------------->
 
       - name: GENERATE APK
-        run: flutter build apk
+        run: flutter build --release apk
       - name: GENERATE IPA
-        run: flutter build ipa --export-options-plist=ios/Runner/ExportOptions.plist
+        run: flutter build ipa --release --export-options-plist=ios/Runner/ExportOptions.plist
       #<---------------- END FLUTTER RELEASES ----------------->
       #<----------------      DELIVERY   ---------------------->
       - name: GOOGLE CREDENTIALS
