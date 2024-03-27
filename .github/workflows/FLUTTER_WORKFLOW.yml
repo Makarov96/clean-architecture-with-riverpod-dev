@@ -98,10 +98,11 @@ jobs:
           echo "${{ secrets.JSON_APP_DISTRIBUTION_ACCESS }}" | base64 --decode > "google-application-credentials.json"
 
       - name: UPLOAD IOS TO APP DISTRIBUTION
-        run: firebase appdistribution:distribute build/ios/ipa/Apps/clean_architecture.ipa --app 1-248510843816-ios-a002a54c3ae86659eeab9d --groups "testers"
+        run: firebase appdistribution:distribute build/ios/ipa/Apps/clean_architecture.ipa --app 1:248510843816:ios:a002a54c3ae86659eeab9d --groups "testers"
       - name: UPLOAD ANDROID TO APP DISTRIBUTION
         run: firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app 1:248510843816:android:b7c4948af306b7f4eeab9d --groups "testers"
-      #<----------------    ARTIFACS    ---------------------->
+
+        #<----------------    ARTIFACS    ---------------------->
       - name: UPLOAD ARTIFAC
         uses: actions/upload-artifact@v4
         with:
