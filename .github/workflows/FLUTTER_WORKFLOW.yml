@@ -87,7 +87,7 @@ jobs:
       #<---------------- FLUTTER RELEASES --------------------->
 
       - name: GENERATE APK
-        run: flutter build --release apk
+        run: flutter build apk --release
       - name: GENERATE IPA
         run: flutter build ipa --release --export-options-plist=ios/Runner/ExportOptions.plist
       #<---------------- END FLUTTER RELEASES ----------------->
