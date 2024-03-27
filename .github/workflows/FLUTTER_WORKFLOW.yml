@@ -37,7 +37,7 @@ jobs:
           distribution: "temurin"
           java-version: "11"
 
-      - name: Install the Apple certificate and provisioning profile
+      - name: APPLE CERTIFICATES
         run: |
           # create variables
           CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
@@ -102,14 +102,15 @@ jobs:
       - name: UPLOAD ANDROID TO APP DISTRIBUTION
         run: firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app 1:248510843816:android:fd1653347d7c2f32eeab9d --groups "testers"
       #<----------------    ARTIFACS    ---------------------->
-      - uses: actions/upload-artifact@v4
+      - name: UPLOAD ARTIFAC
+        uses: actions/upload-artifact@v4
         with:
           name: artifacs
           path: |
             build/ios/ipa/Apps/clean_architecture.ipa
             build/app/outputs/flutter-apk/app-release.apk
       #<----------------  END ARTIFACS    -------------------->
-      - name: Clean up keychain and provisioning profile
+      - name: CLEAN KEYCHAIN
         if: ${{ always() }}
         run: |
           security delete-keychain $RUNNER_TEMP/app-signing.keychain-db
