@@ -1,7 +1,7 @@
 name: FlutterMasters
 
 workflows:
-  flutter_masters_to:
+  flutter_masters:
     environment:
      groups:
        - "FLUTTER_MASTERS"
