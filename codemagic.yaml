@@ -3,6 +3,8 @@ name: FlutterMasters
 workflows:
   flutter_masters:
     environment:
+     groups:
+       - "FLUTTER_MASTERS"
      flutter: stable
      java: 11
      ios_signing:
