@@ -1,0 +1,52 @@
+name: FlutterMasters
+
+workflows:
+  flutter_masters:
+    environment:
+     flutter: stable
+     java: 11
+     ios_signing:
+      certificates:
+        - FlutterMasterDevelopCertificate
+      provisioning_profiles:
+        - FlutterMasterProvisionProfile
+
+
+    triggering:
+     branch_patterns:
+       - include: true
+         source: true
+         pattern: github_actions
+    scripts:
+      - name: KEYCHAIN INIT
+        script: keychain initialize
+
+      - name: ADD CERTS
+        script: keychain add-certificates
+
+      - name: USE PROFILES
+        script: xcode-project use-profiles
+
+      - name: BUILD APK
+        script: flutter build apk --release
+
+      - name: BUILD IPA
+        script: flutter build ipa --release --export-options-plist=ios/Runner/ExportOptions.plist
+
+    artifacts:
+      -  build/ios/ipa/Apps/clean_architecture.ipa
+      -  build/app/outputs/flutter-apk/app-release.apk
+
+    publishing:
+     firebase:
+      firebase_token: 1//01kLVn-TR-vaOCgYIARAAGAESNwF-L9IrAIrpkf6Ej_1IiZs0ppJ-kceysISdXohcWgqTvXXgzXEFcWoM4VhFvAHVQHCTnKkBUSw
+      android:
+        app_id: 1:248510843816:android:b7c4948af306b7f4eeab9d
+        groups:
+          - "testers"
+        artifact_type: apk
+      ios:
+       app_id: 1:248510843816:ios:a002a54c3ae86659eeab9d
+       groups:
+         - "testers"
+      
