@@ -39,14 +39,14 @@ workflows:
 
     publishing:
      firebase:
-      firebase_token: 1//01kLVn-TR-vaOCgYIARAAGAESNwF-L9IrAIrpkf6Ej_1IiZs0ppJ-kceysISdXohcWgqTvXXgzXEFcWoM4VhFvAHVQHCTnKkBUSw
+      firebase_token: $FIREBASE_TOKEN
       android:
-        app_id: 1:248510843816:android:b7c4948af306b7f4eeab9d
+        app_id: $ANDROID_APP_ID
         groups:
           - "testers"
         artifact_type: apk
       ios:
-       app_id: 1:248510843816:ios:a002a54c3ae86659eeab9d
+       app_id: $IOS_APP_ID
        groups:
          - "testers"
       
