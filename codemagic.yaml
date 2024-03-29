@@ -15,10 +15,13 @@ workflows:
 
 
     triggering:
+     events:
+        - "push"
      branch_patterns:
        - include: true
          source: true
          pattern: github_actions
+    
     scripts:
       - name: KEYCHAIN INIT
         script: keychain initialize
