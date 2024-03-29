@@ -39,7 +39,7 @@ workflows:
         script: echo '{"FB_TOKEN":"$FIREBASE_TOKEN"}' > env/dev.json
 
       - name: SHOW CONTENT
-        script: less env/dev.json
+        script: less dev.json
         working_directory: env
 
       - name: BUILD APK
